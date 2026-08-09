@@ -72,7 +72,7 @@ function Navbar() {
         {/* Logo */}
         <a href="#" className="flex items-center gap-3 group">
           <img
-            src="/manus-storage/pivoine-logo_113fe9cf.png"
+            src="/images/pivoine-logo_113fe9cf.png"
             alt="Logo La Pivoine"
             className="w-10 h-10 object-contain"
           />
@@ -183,7 +183,7 @@ function Hero() {
     <section className="relative w-full" style={{ height: '100vh', minHeight: 600 }}>
       {/* Photo façade */}
       <img
-        src="/manus-storage/restaurant-interior_4304db63.png"
+        src="/images/restaurant-interior_4304db63.png"
         alt="Intérieur du restaurant La Pivoine"
         className="absolute inset-0 w-full h-full object-cover"
         style={{ objectPosition: 'center 30%' }}
@@ -377,7 +377,7 @@ function AboutSection() {
             style={{ borderRadius: '60% 40% 55% 45% / 45% 55% 45% 55%', aspectRatio: '4/5' }}
           >
             <img
-              src="/manus-storage/restaurant-interior_4304db63.png"
+              src="/images/restaurant-interior_4304db63.png"
               alt="Ambiance La Pivoine"
               className="w-full h-full object-cover"
               style={{ objectPosition: 'center 40%' }}
@@ -545,7 +545,7 @@ function BrunchSection() {
               style={{ borderRadius: '45% 55% 40% 60% / 55% 45% 60% 40%', aspectRatio: '4/5' }}
             >
               <img
-                src="/manus-storage/brunch-dish_c6b33f50.png"
+                src="/images/brunch-dish_c6b33f50.png"
                 alt="Brunch La Pivoine — Tartine avocat saumon"
                 className="w-full h-full object-cover"
               />
@@ -948,7 +948,7 @@ function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img src="/manus-storage/pivoine-logo_113fe9cf.png" alt="Logo" className="w-8 h-8 object-contain opacity-90" />
+              <img src="/images/pivoine-logo_113fe9cf.png" alt="Logo" className="w-8 h-8 object-contain opacity-90" />
               <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.4rem', fontWeight: 600, color: '#F5C6CE' }}>La Pivoine</span>
             </div>
             <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.88rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.7 }}>
