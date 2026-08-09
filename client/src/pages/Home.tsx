@@ -1,5 +1,5 @@
-﻿/**
- * Restaurant La Pivoine â€” Page principale
+/**
+ * Restaurant Café Pivoine — Page principale
  * Design: Jardin Botanique Contemporain
  * Palette: Blanc pur, Rose Pivoine (#C8647A), Or doux (#C9A96E)
  * Typo: Cormorant Garamond (titres), Lato (corps), Dancing Script (accents)
@@ -9,7 +9,7 @@ import GradientWaves from '@/components/GradientWaves';
 import { EventBanner } from "@/components/EventBanner";
 import { MapView } from '@/components/Map';
 
-// â”€â”€ IcÃ´nes SVG inline â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Icônes SVG inline ──────────────────────────────────────────────────────
 // Fine-line botanical peony illustration (Art Nouveau line art)
 const PeonyLineart = ({ className = '', color = '#C8647A', opacity = 0.12 }: { className?: string; color?: string; opacity?: number }) => (
   <svg className={className} viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ opacity }}>
@@ -42,7 +42,7 @@ const BotanicalDivider = ({ color = '#C8647A' }: { color?: string }) => (
   </div>
 );
 
-// â”€â”€ Composant Navigation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Composant Navigation ───────────────────────────────────────────────────
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -57,7 +57,7 @@ function Navbar() {
     { label: 'Happy Hour', href: '#happyhour' },
     { label: 'Brunch', href: '#brunch' },
     { label: 'Menu Saisonnier', href: '#menu' },
-    { label: 'RÃ©server', href: '#reservation' },
+    { label: 'Réserver', href: '#reservation' },
   ];
 
   return (
@@ -74,7 +74,7 @@ function Navbar() {
         <a href="#" className="flex items-center gap-3 group">
           <img
             src="/images/pivoine-logo_113fe9cf.png"
-            alt="Logo La Pivoine"
+            alt="Logo Café Pivoine"
             className="w-10 h-10 object-contain"
           />
           <span
@@ -88,7 +88,7 @@ function Navbar() {
               transition: 'color 0.4s',
             }}
           >
-            La Pivoine
+            Café Pivoine
           </span>
         </a>
 
@@ -132,7 +132,7 @@ function Navbar() {
             onMouseEnter={e => (e.currentTarget.style.background = '#a84e62')}
             onMouseLeave={e => (e.currentTarget.style.background = '#C8647A')}
           >
-            RÃ©server
+            Réserver
           </a>
         </nav>
 
@@ -178,18 +178,18 @@ function Navbar() {
   );
 }
 
-// â”€â”€ Composant Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Composant Hero ─────────────────────────────────────────────────────────
 function Hero() {
   return (
     <section className="relative w-full" style={{ height: '100vh', minHeight: 600 }}>
-      {/* Photo faÃ§ade */}
+      {/* Photo façade */}
       <img
         src="/images/restaurant-interior_4304db63.png"
-        alt="IntÃ©rieur du restaurant La Pivoine"
+        alt="Intérieur du restaurant Café Pivoine"
         className="absolute inset-0 w-full h-full object-cover"
         style={{ objectPosition: 'center 30%' }}
       />
-      {/* Overlay dÃ©gradÃ© */}
+      {/* Overlay dégradé */}
       <div
         className="absolute inset-0"
         style={{
@@ -221,7 +221,7 @@ function Hero() {
             marginBottom: '1rem',
           }}
         >
-          La Pivoine
+          Café Pivoine
         </h1>
         <p
           style={{
@@ -233,7 +233,7 @@ function Hero() {
             marginBottom: '2.5rem',
           }}
         >
-          LÃ  oÃ¹ les saisons ont un goÃ»t
+          Là où les saisons ont un goût
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
           <div className="flex flex-wrap gap-3 justify-center">
@@ -316,20 +316,20 @@ function Hero() {
             onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.15)'; }}
             onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; }}
           >
-            RÃ©server une table
+            Réserver une table
           </a>
         </div>
       </div>
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
-        <span style={{ fontFamily: "'Lato'", fontSize: '0.7rem', color: 'rgba(255,255,255,0.6)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>DÃ©filer</span>
+        <span style={{ fontFamily: "'Lato'", fontSize: '0.7rem', color: 'rgba(255,255,255,0.6)', letterSpacing: '0.15em', textTransform: 'uppercase' }}>Défiler</span>
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 4v12M4 10l6 6 6-6" stroke="rgba(255,255,255,0.6)" strokeWidth="1.5" strokeLinecap="round"/></svg>
       </div>
     </section>
   );
 }
 
-// â”€â”€ Composant Wave Divider â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Composant Wave Divider ─────────────────────────────────────────────────
 function WaveDivider({ flip = false, color = '#fff' }: { flip?: boolean; color?: string }) {
   return (
     <div style={{ lineHeight: 0, transform: flip ? 'scaleY(-1)' : 'none', background: 'transparent' }}>
@@ -340,11 +340,11 @@ function WaveDivider({ flip = false, color = '#fff' }: { flip?: boolean; color?:
   );
 }
 
-// â”€â”€ Section Ã€ propos â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Section À propos ───────────────────────────────────────────────────────
 function AboutSection() {
   return (
     <section className="py-24 px-6 bg-white relative overflow-hidden">
-      {/* Pivoine dÃ©corative fond */}
+      {/* Pivoine décorative fond */}
       <PeonyLineart className="absolute -top-10 -right-10 w-80 h-80 pointer-events-none" opacity={0.10} />
       <PeonyLineart className="absolute bottom-0 left-0 w-56 h-56 pointer-events-none" color="#C9A96E" opacity={0.07} />
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
@@ -353,17 +353,17 @@ function AboutSection() {
             Notre histoire
           </p>
           <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 600, color: '#2a1a1e', lineHeight: 1.2, marginBottom: '1.5rem' }}>
-            Un Ã©crin floral<br /><em>au cÅ“ur de la ville</em>
+            Un écrin floral<br /><em>au cœur de la ville</em>
           </h2>
           <BotanicalDivider />
           <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '1rem', color: '#5a3a42', lineHeight: 1.85, marginBottom: '1.2rem' }}>
-            La Pivoine est un lieu oÃ¹ l'Ã©lÃ©gance florale rencontre la gastronomie vivante. Dans un dÃ©cor aux reflets dorÃ©s et aux lumiÃ¨res tamisÃ©es, chaque repas devient une parenthÃ¨se hors du temps.
+            Café Pivoine est un lieu où l'élégance florale rencontre la gastronomie vivante. Dans un décor aux reflets dorés et aux lumières tamisées, chaque repas devient une parenthèse hors du temps.
           </p>
           <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '1rem', color: '#5a3a42', lineHeight: 1.85 }}>
-            Notre cuisine Ã©volue au rythme des saisons, sublimant les produits frais du marchÃ© avec une touche crÃ©ative et gÃ©nÃ©reuse. Du brunch dominical au dÃ®ner intime, nous cultivons l'art de recevoir.
+            Notre cuisine évolue au rythme des saisons, sublimant les produits frais du marché avec une touche créative et généreuse. Du brunch dominical au dîner intime, nous cultivons l'art de recevoir.
           </p>
           <div className="flex gap-3 mt-8">
-            {[{ n: 'Happy Hour', t: 'Chaque soir' }, { n: 'Brunch', t: 'Sam. & Dim.' }, { n: 'Menu Saison', t: 'RenouvelÃ©' }].map(item => (
+            {[{ n: 'Happy Hour', t: 'Chaque soir' }, { n: 'Brunch', t: 'Sam. & Dim.' }, { n: 'Menu Saison', t: 'Renouvelé' }].map(item => (
               <div key={item.n} className="text-center px-4 py-3 rounded-xl" style={{ background: '#FDF0F2', border: '1px solid #F0D0D8' }}>
                 <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '0.95rem', fontWeight: 600, color: '#C8647A' }}>{item.n}</div>
                 <div style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.72rem', color: '#8a5a62', letterSpacing: '0.08em', textTransform: 'uppercase', marginTop: 2 }}>{item.t}</div>
@@ -371,7 +371,7 @@ function AboutSection() {
             ))}
           </div>
         </div>
-        {/* Image intÃ©rieur */}
+        {/* Image intérieur */}
         <div className="relative">
           <div
             className="overflow-hidden shadow-2xl"
@@ -379,7 +379,7 @@ function AboutSection() {
           >
             <img
               src="/images/restaurant-interior_4304db63.png"
-              alt="Ambiance La Pivoine"
+              alt="Ambiance Café Pivoine"
               className="w-full h-full object-cover"
               style={{ objectPosition: 'center 40%' }}
             />
@@ -398,13 +398,13 @@ function AboutSection() {
   );
 }
 
-// â”€â”€ Section Happy Hour â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Section Happy Hour ─────────────────────────────────────────────────────
 function HappyHourSection() {
   const cocktails = [
-    { name: 'Pivoine Royale', desc: 'Champagne, liqueur de rose, framboise fraÃ®che', price: '9â‚¬', emoji: 'ðŸ¥‚' },
-    { name: 'Sunset PÃ©tale', desc: 'Gin, sirop de pivoine, citron, eau pÃ©tillante', price: '8â‚¬', emoji: 'ðŸŒ¸' },
-    { name: 'Or & Velours', desc: 'Whisky, miel, gingembre, citron vert', price: '9â‚¬', emoji: 'âœ¨' },
-    { name: 'Mocktail Floral', desc: 'Hibiscus, grenadine, citron, soda', price: '6â‚¬', emoji: 'ðŸŒº' },
+    { name: 'Pivoine Royale', desc: 'Champagne, liqueur de rose, framboise fraîche', price: '9€', emoji: '🥂' },
+    { name: 'Sunset Pétale', desc: 'Gin, sirop de pivoine, citron, eau pétillante', price: '8€', emoji: '🌸' },
+    { name: 'Or & Velours', desc: 'Whisky, miel, gingembre, citron vert', price: '9€', emoji: '✨' },
+    { name: 'Mocktail Floral', desc: 'Hibiscus, grenadine, citron, soda', price: '6€', emoji: '🌺' },
   ];
 
   return (
@@ -415,14 +415,14 @@ function HappyHourSection() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <p style={{ fontFamily: "'Dancing Script', cursive", fontSize: '1.2rem', color: '#C8647A', marginBottom: '0.4rem' }}>
-              Chaque soir de 17h Ã  20h
+              Chaque soir de 17h à 20h
             </p>
             <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 600, color: '#2a1a1e', marginBottom: '1rem' }}>
               Happy Hour
             </h2>
             <BotanicalDivider />
             <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '1rem', color: '#6a4a52', maxWidth: 480, margin: '0 auto', lineHeight: 1.7 }}>
-              Retrouvez-nous en fin de journÃ©e pour des cocktails signature et des planches Ã  partager, dans l'atmosphÃ¨re chaleureuse de La Pivoine.
+              Retrouvez-nous en fin de journée pour des cocktails signature et des planches à partager, dans l'atmosphère chaleureuse de Café Pivoine.
             </p>
           </div>
 
@@ -453,7 +453,7 @@ function HappyHourSection() {
             ))}
           </div>
 
-          {/* GradientWaves dÃ©coratif */}
+          {/* GradientWaves décoratif */}
           <div className="mt-16 rounded-3xl overflow-hidden" style={{ height: 160 }}>
             <GradientWaves
               horizonColor="#F9E8EC"
@@ -475,7 +475,7 @@ function HappyHourSection() {
   );
 }
 
-// â”€â”€ Section Brunch â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Section Brunch ─────────────────────────────────────────────────────────
 function BrunchSection() {
   return (
     <section id="brunch" className="py-24 px-6 bg-white relative overflow-hidden">
@@ -486,21 +486,21 @@ function BrunchSection() {
           {/* Texte */}
           <div>
             <p style={{ fontFamily: "'Dancing Script', cursive", fontSize: '1.2rem', color: '#C8647A', marginBottom: '0.4rem' }}>
-              Samedi & Dimanche Â· 10hâ€“15h
+              Samedi & Dimanche · 10h–15h
             </p>
             <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 600, color: '#2a1a1e', lineHeight: 1.2, marginBottom: '1.5rem' }}>
-              Le Brunch<br /><em>de La Pivoine</em>
+              Le Brunch<br /><em>de Café Pivoine</em>
             </h2>
             <BotanicalDivider />
             <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '1rem', color: '#5a3a42', lineHeight: 1.85, marginBottom: '1.5rem' }}>
-              Un brunch gÃ©nÃ©reux et raffinÃ©, pensÃ© pour les matins qui s'Ã©tirent. Å’ufs bÃ©nÃ©dicte, tartines crÃ©atives, viennoiseries maison et jus pressÃ©s Ã  la minute â€” tout ce qu'il faut pour bien commencer le week-end.
+              Un brunch généreux et raffiné, pensé pour les matins qui s'étirent. Œufs bénédicte, tartines créatives, viennoiseries maison et jus pressés à la minute — tout ce qu'il faut pour bien commencer le week-end.
             </p>
             <div className="space-y-3 mb-8">
               {[
-                'Tartine avocat, saumon gravlax & Å“uf pochÃ©',
+                'Tartine avocat, saumon gravlax & Å“uf poché',
                 'Granola maison, yaourt grec, fruits de saison',
-                'Pancakes Ã  la fleur d\'oranger, sirop d\'Ã©rable',
-                'Planche charcuterie & fromages affinÃ©s',
+                'Pancakes à la fleur d\'oranger, sirop d\'érable',
+                'Planche charcuterie & fromages affinés',
                 'Jus de fruits frais & smoothies du moment',
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3">
@@ -513,7 +513,7 @@ function BrunchSection() {
             </div>
             <div className="flex items-center gap-6">
               <div>
-                <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '2rem', fontWeight: 700, color: '#C8647A' }}>28â‚¬</div>
+                <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '2rem', fontWeight: 700, color: '#C8647A' }}>29€</div>
                 <div style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.75rem', color: '#8a5a62', letterSpacing: '0.08em', textTransform: 'uppercase' }}>par personne</div>
               </div>
               <a
@@ -534,7 +534,7 @@ function BrunchSection() {
                 onMouseEnter={e => (e.currentTarget.style.background = '#a84e62')}
                 onMouseLeave={e => (e.currentTarget.style.background = '#C8647A')}
               >
-                RÃ©server le brunch
+                Réserver le brunch
               </a>
             </div>
           </div>
@@ -547,11 +547,11 @@ function BrunchSection() {
             >
               <img
                 src="/images/brunch-dish_c6b33f50.png"
-                alt="Brunch La Pivoine â€” Tartine avocat saumon"
+                alt="Brunch Café Pivoine — Tartine avocat saumon"
                 className="w-full h-full object-cover"
               />
             </div>
-            {/* Ã‰tiquette flottante */}
+            {/* Étiquette flottante */}
             <div
               className="absolute top-6 -right-4 rounded-2xl px-4 py-3 shadow-lg"
               style={{ background: '#C9A96E' }}
@@ -566,34 +566,34 @@ function BrunchSection() {
   );
 }
 
-// â”€â”€ Section Menu Saisonnier â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Section Menu Saisonnier ────────────────────────────────────────────────
 function SeasonalMenuSection() {
   const [activeSeason, setActiveSeason] = useState('printemps');
 
   const seasons: Record<string, { label: string; icon: string; color: string; starters: string[]; mains: string[]; desserts: string[] }> = {
     printemps: {
-      label: 'Printemps', icon: 'ðŸŒ¸', color: '#C8647A',
-      starters: ['VeloutÃ© d\'asperges vertes, huile de truffe', 'Tartare de daurade, fleurs comestibles', 'Burrata, petits pois, menthe fraÃ®che'],
-      mains: ['Agneau de lait, jus d\'herbes, lÃ©gumes primeurs', 'Risotto aux morilles, parmesan 24 mois', 'Saint-Jacques poÃªlÃ©es, purÃ©e de topinambour'],
-      desserts: ['Pavlova aux fraises Gariguette', 'Tarte fine rhubarbe, crÃ¨me lÃ©gÃ¨re', 'Panna cotta fleur de sureau'],
+      label: 'Printemps', icon: '🌸', color: '#C8647A',
+      starters: ['Velouté d\'asperges vertes, huile de truffe', 'Tartare de daurade, fleurs comestibles', 'Burrata, petits pois, menthe fraîche'],
+      mains: ['Agneau de lait, jus d\'herbes, légumes primeurs', 'Risotto aux morilles, parmesan 24 mois', 'Saint-Jacques poêlées, purée de topinambour'],
+      desserts: ['Pavlova aux fraises Gariguette', 'Tarte fine rhubarbe, crème légère', 'Panna cotta fleur de sureau'],
     },
     ete: {
-      label: 'Ã‰tÃ©', icon: 'â˜€ï¸', color: '#C9A96E',
+      label: 'Été', icon: '☀️', color: '#C9A96E',
       starters: ['Gaspacho de tomates anciennes, basilic', 'Carpaccio de thon, avocat, citron vert', 'Salade de melon, jambon de Bayonne, roquette'],
-      mains: ['Filet de bar, ratatouille confite, pistou', 'Poulet fermier rÃ´ti, lÃ©gumes du soleil', 'Penne aux courgettes, ricotta, citron'],
+      mains: ['Filet de bar, ratatouille confite, pistou', 'Poulet fermier rôti, légumes du soleil', 'Penne aux courgettes, ricotta, citron'],
       desserts: ['Tarte tatin aux abricots', 'Sorbet framboise, coulis de fruits rouges', 'Clafoutis aux cerises noires'],
     },
     automne: {
-      label: 'Automne', icon: 'ðŸ‚', color: '#B8734A',
-      starters: ['VeloutÃ© de potimarron, noisettes grillÃ©es', 'Foie gras maison, chutney de figues', 'Salade de betteraves, chÃ¨vre, noix'],
-      mains: ['Magret de canard, sauce aux cÃ¨pes', 'CÃ´te de veau, gratin dauphinois', 'Gnocchi Ã  la truffe noire, beurre noisette'],
-      desserts: ['Tarte aux poires, amandes effilÃ©es', 'Moelleux au chocolat, caramel beurre salÃ©', 'Crumble pommes-cannelle'],
+      label: 'Automne', icon: '🍂', color: '#B8734A',
+      starters: ['Velouté de potimarron, noisettes grillées', 'Foie gras maison, chutney de figues', 'Salade de betteraves, chèvre, noix'],
+      mains: ['Magret de canard, sauce aux cèpes', 'Côte de veau, gratin dauphinois', 'Gnocchi à la truffe noire, beurre noisette'],
+      desserts: ['Tarte aux poires, amandes effilées', 'Moelleux au chocolat, caramel beurre salé', 'Crumble pommes-cannelle'],
     },
     hiver: {
-      label: 'Hiver', icon: 'â„ï¸', color: '#6A8FAF',
-      starters: ['Soupe Ã  l\'oignon gratinÃ©e', 'HuÃ®tres fines de Bretagne, mignonette', 'Terrine de gibier, cornichons maison'],
-      mains: ['BÅ“uf bourguignon, purÃ©e Robuchon', 'Homard breton, bisque crÃ©meuse', 'Ravioles de Romans, beurre de sauge'],
-      desserts: ['BÃ»che aux marrons glacÃ©s', 'ÃŽle flottante, pralin maison', 'Fondant au chocolat noir 72%'],
+      label: 'Hiver', icon: '❄️', color: '#6A8FAF',
+      starters: ['Soupe à l\'oignon gratinée', 'Huîtres fines de Bretagne, mignonette', 'Terrine de gibier, cornichons maison'],
+      mains: ['BÅ“uf bourguignon, purée Robuchon', 'Homard breton, bisque crémeuse', 'Ravioles de Romans, beurre de sauge'],
+      desserts: ['Bûche aux marrons glacés', 'Île flottante, pralin maison', 'Fondant au chocolat noir 72%'],
     },
   };
 
@@ -608,18 +608,18 @@ function SeasonalMenuSection() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <p style={{ fontFamily: "'Dancing Script', cursive", fontSize: '1.2rem', color: '#C8647A', marginBottom: '0.4rem' }}>
-              RenouvelÃ© chaque saison
+              Renouvelé chaque saison
             </p>
             <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 600, color: '#2a1a1e', marginBottom: '1rem' }}>
               Menu Saisonnier
             </h2>
             <BotanicalDivider />
             <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '1rem', color: '#6a4a52', maxWidth: 500, margin: '0 auto', lineHeight: 1.7 }}>
-              Notre cuisine suit le rythme de la nature. Chaque saison apporte ses saveurs, ses textures et ses Ã©motions.
+              Notre cuisine suit le rythme de la nature. Chaque saison apporte ses saveurs, ses textures et ses émotions.
             </p>
           </div>
 
-          {/* SÃ©lecteur de saison */}
+          {/* Sélecteur de saison */}
           <div className="flex flex-wrap justify-center gap-3 mb-12">
             {Object.entries(seasons).map(([key, s]) => (
               <button
@@ -651,9 +651,9 @@ function SeasonalMenuSection() {
           {/* Cartes menu */}
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { title: 'EntrÃ©es', items: current.starters, icon: 'ðŸŒ¿' },
-              { title: 'Plats', items: current.mains, icon: 'ðŸ½ï¸' },
-              { title: 'Desserts', items: current.desserts, icon: 'ðŸŒ¸' },
+              { title: 'Entrées', items: current.starters, icon: '🌿' },
+              { title: 'Plats', items: current.mains, icon: '🍽️' },
+              { title: 'Desserts', items: current.desserts, icon: '🌸' },
             ].map((cat, i) => (
               <div
                 key={i}
@@ -678,7 +678,7 @@ function SeasonalMenuSection() {
           {/* Prix menu */}
           <div className="mt-10 text-center">
             <div className="inline-flex gap-8 rounded-2xl px-10 py-6" style={{ background: '#fff', border: '1px solid #F0D0D8', boxShadow: '0 4px 20px rgba(200,100,122,0.06)' }}>
-              {[{ label: 'EntrÃ©e + Plat', price: '32â‚¬' }, { label: 'Plat + Dessert', price: '32â‚¬' }, { label: 'Menu complet', price: '42â‚¬' }].map((m, i) => (
+              {[{ label: 'Entrée + Plat', price: '32€' }, { label: 'Plat + Dessert', price: '32€' }, { label: 'Menu complet', price: '42€' }].map((m, i) => (
                 <div key={i} className="text-center">
                   <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.6rem', fontWeight: 700, color: '#C8647A' }}>{m.price}</div>
                   <div style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.75rem', color: '#8a5a62', letterSpacing: '0.06em', textTransform: 'uppercase' }}>{m.label}</div>
@@ -693,7 +693,7 @@ function SeasonalMenuSection() {
   );
 }
 
-// â”€â”€ Section RÃ©servation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Section Réservation ────────────────────────────────────────────────────
 function ReservationSection() {
   const [form, setForm] = useState({ name: '', email: '', date: '', time: '', guests: '2', message: '' });
   const [sent, setSent] = useState(false);
@@ -737,22 +737,22 @@ function ReservationSection() {
             Nous vous attendons
           </p>
           <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 600, color: '#2a1a1e', marginBottom: '1rem' }}>
-            RÃ©server une table
+            Réserver une table
           </h2>
           <BotanicalDivider />
           <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '1rem', color: '#6a4a52', maxWidth: 420, margin: '0 auto', lineHeight: 1.7 }}>
-            Pour toute demande spÃ©ciale ou Ã©vÃ©nement privÃ©, n'hÃ©sitez pas Ã  nous contacter directement.
+            Pour toute demande spéciale ou événement privé, n'hésitez pas à nous contacter directement.
           </p>
         </div>
 
         {sent ? (
           <div className="text-center py-16">
-            <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>ðŸŒ¸</div>
+            <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🌸</div>
             <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.8rem', fontWeight: 600, color: '#C8647A', marginBottom: '0.75rem' }}>
-              Merci pour votre rÃ©servation !
+              Merci pour votre réservation !
             </h3>
             <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '1rem', color: '#6a4a52' }}>
-              Nous vous confirmerons votre table par e-mail dans les plus brefs dÃ©lais.
+              Nous vous confirmerons votre table par e-mail dans les plus brefs délais.
             </p>
           </div>
         ) : (
@@ -828,7 +828,7 @@ function ReservationSection() {
             <div>
               <label style={labelStyle}>Message (optionnel)</label>
               <textarea
-                placeholder="Allergie, occasion spÃ©ciale..."
+                placeholder="Allergie, occasion spéciale..."
                 value={form.message}
                 onChange={e => setForm({ ...form, message: e.target.value })}
                 rows={1}
@@ -857,7 +857,7 @@ function ReservationSection() {
                 onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.background = '#a84e62'; (e.currentTarget as HTMLButtonElement).style.transform = 'scale(1.03)'; }}
                 onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.background = '#C8647A'; (e.currentTarget as HTMLButtonElement).style.transform = 'scale(1)'; }}
               >
-                Confirmer la rÃ©servation
+                Confirmer la réservation
               </button>
             </div>
           </form>
@@ -868,7 +868,7 @@ function ReservationSection() {
 }
 
 
-// â”€â”€ Section Contact avec Carte â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Section Contact avec Carte ────────────────────────────────────────────
 function ContactSection() {
   const mapRef = useRef<google.maps.Map | null>(null);
 
@@ -877,7 +877,7 @@ function ContactSection() {
     const marker = new google.maps.marker.AdvancedMarkerElement({
       map,
       position: { lat: 48.8566, lng: 2.3522 },
-      title: 'Restaurant La Pivoine',
+      title: 'Restaurant Café Pivoine',
     });
   };
 
@@ -910,7 +910,7 @@ function ContactSection() {
               <div className="flex items-start gap-4 mb-4">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M17.92 7.02C17.45 6.18 16.84 5.46 16.07 4.91C15.29 4.36 14.41 4 13.5 4C11.57 4 10 5.57 10 7.5C10 8.5 10.35 9.41 10.93 10.12C10.31 10.59 9.77 11.13 9.31 11.74C8.35 13.02 7.8 14.56 7.8 16.2C7.8 19.63 10.57 22.4 14 22.4C17.43 22.4 20.2 19.63 20.2 16.2C20.2 14.56 19.65 13.02 18.69 11.74C18.23 11.13 17.69 10.59 17.07 10.12C17.65 9.41 18 8.5 18 7.5C18 6.5 17.65 5.59 17.07 4.88L17.92 7.02Z" fill="#C8647A"/></svg>
                 <div>
-                  <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1rem', fontWeight: 600, color: '#2a1a1e', marginBottom: '0.3rem' }}>TÃ©lÃ©phone</h3>
+                  <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1rem', fontWeight: 600, color: '#2a1a1e', marginBottom: '0.3rem' }}>Téléphone</h3>
                   <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.95rem', color: '#5a3a42', lineHeight: 1.6 }}><a href="tel:+33142000000" style={{ color: '#C8647A', textDecoration: 'none' }}>+33 1 42 00 00 00</a></p>
                 </div>
               </div>
@@ -934,7 +934,7 @@ function ContactSection() {
   );
 }
 
-// â”€â”€ Footer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Footer ─────────────────────────────────────────────────────────────────
 function Footer() {
   return (
     <footer style={{ background: '#2a1a1e' }} className="relative overflow-hidden">
@@ -950,10 +950,10 @@ function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <img src="/images/pivoine-logo_113fe9cf.png" alt="Logo" className="w-8 h-8 object-contain opacity-90" />
-              <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.4rem', fontWeight: 600, color: '#F5C6CE' }}>La Pivoine</span>
+              <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.4rem', fontWeight: 600, color: '#F5C6CE' }}>Café Pivoine</span>
             </div>
             <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.88rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.7 }}>
-              Un restaurant oÃ¹ chaque repas est une cÃ©lÃ©bration des saisons et du goÃ»t.
+              Un restaurant où chaque repas est une célébration des saisons et du goût.
             </p>
           </div>
           {/* Horaires */}
@@ -961,9 +961,9 @@ function Footer() {
             <h4 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1rem', fontWeight: 600, color: '#F5C6CE', marginBottom: '1rem' }}>Horaires</h4>
             <div className="space-y-2">
               {[
-                { j: 'Lun â€“ Ven', h: '12hâ€“14h30 Â· 19hâ€“23h' },
-                { j: 'Sam â€“ Dim', h: 'Brunch 10hâ€“15h Â· DÃ®ner 19hâ€“23h' },
-                { j: 'Happy Hour', h: 'Tous les soirs 17hâ€“20h' },
+                { j: 'Lun – Ven', h: '12h–14h30 · 19h–23h' },
+                { j: 'Sam – Dim', h: 'Brunch 10h–15h · Dîner 19h–23h' },
+                { j: 'Happy Hour', h: 'Tous les soirs 17h–20h' },
               ].map(item => (
                 <div key={item.j} className="flex justify-between gap-4">
                   <span style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.82rem', color: 'rgba(255,255,255,0.5)' }}>{item.j}</span>
@@ -977,9 +977,9 @@ function Footer() {
             <h4 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1rem', fontWeight: 600, color: '#F5C6CE', marginBottom: '1rem' }}>Contact</h4>
             <div className="space-y-2">
               {[
-                { icon: 'ðŸ“', text: '12 rue des Fleurs, 75006 Paris' },
-                { icon: 'ðŸ“ž', text: '+33 1 42 00 00 00' },
-                { icon: 'âœ‰ï¸', text: 'contact@lapivoine.fr' },
+                { icon: '📍', text: '12 rue des Fleurs, 75006 Paris' },
+                { icon: '📞', text: '+33 1 42 00 00 00' },
+                { icon: '✉️', text: 'contact@lapivoine.fr' },
               ].map(item => (
                 <div key={item.icon} className="flex items-start gap-2">
                   <span style={{ fontSize: '0.9rem' }}>{item.icon}</span>
@@ -991,10 +991,10 @@ function Footer() {
         </div>
         <div className="max-w-5xl mx-auto mt-10 pt-6 flex flex-col md:flex-row items-center justify-between gap-4" style={{ borderTop: '1px solid rgba(255,255,255,0.08)' }}>
           <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.78rem', color: 'rgba(255,255,255,0.35)' }}>
-            Â© 2026 Restaurant La Pivoine â€” Tous droits rÃ©servÃ©s
+            © 2026 Restaurant Café Pivoine — Tous droits réservés
           </p>
           <p style={{ fontFamily: "'Dancing Script', cursive", fontSize: '1rem', color: '#C8647A' }}>
-            LÃ  oÃ¹ les saisons ont un goÃ»t âœ¦
+            Là où les saisons ont un goût ✦
           </p>
         </div>
       </div>
@@ -1002,7 +1002,7 @@ function Footer() {
   );
 }
 
-// â”€â”€ Page principale â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ── Page principale ────────────────────────────────────────────────────────
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
