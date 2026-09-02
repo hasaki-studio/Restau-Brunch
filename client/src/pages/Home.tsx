@@ -6,7 +6,6 @@
  */
 import { useState, useEffect, useRef } from 'react';
 import GradientWaves from '@/components/GradientWaves';
-import { EventBanner } from "@/components/EventBanner";
 import { MapView } from '@/components/Map';
 
 // ── Icônes SVG inline ──────────────────────────────────────────────────────
