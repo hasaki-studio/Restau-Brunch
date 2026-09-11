@@ -580,12 +580,12 @@ function SeasonalMenuSection() {
       label: 'Été', icon: '☀️', color: '#C9A96E',
       starters: ['Gratin de quinoa et petis légues', 'Ravioles aux champignons et à la crème de truffe, parmesan', 'Salade de melon, jambon de Bayonne, roquette'],
       mains: ['Filet de bar, ratatouille confite, pistou', 'Poulet fermier rôti, légumes du soleil', 'Penne aux courgettes, ricotta, citron'],
-      desserts: ['Tatin de pommes et crème d'Isigny', 'Crème brûlée à la vanille', 'Clafoutis aux cerises noires'],
+      desserts: ['Fromage blanc, fruits de saisons & crumble noisettes', 'Crème brûlée à la vanille', 'Clafoutis aux cerises noires'],
     },
     automne: {
       label: 'Automne', icon: '🍂', color: '#B8734A',
       starters: ['Velouté de potimarron, noisettes grillées', 'Foie gras maison, chutney de figues', 'Salade de betteraves, chèvre, noix'],
-      mains: ['Pavé de lieu, ccrème de paprika', 'Tartare de boeuf préparé, frites maison', 'Mac and cheese (and beef)'],
+      mains: ['Pavé de lieu, crème de paprika', 'Tartare de boeuf préparé, frites maison', 'Mac and cheese (and beef)'],
       desserts: ['Tarte aux poires, amandes effilées', 'Moelleux au chocolat, caramel beurre salé', 'Crumble pommes-cannelle'],
     },
     hiver: {
