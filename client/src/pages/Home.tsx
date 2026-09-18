@@ -1,41 +1,20 @@
 /**
  * Restaurant Café Pivoine — Page principale
- * Design: Jardin Botanique Contemporain
- * Palette: Blanc pur, Rose Pivoine (#C8647A), Or doux (#C9A96E)
+ * Design: Brasserie Parisienne (store à rayures, fer forgé, pierre de taille)
+ * Palette: Blanc pur, Ocre moutarde (#B8872A), Brass antique (#8C6A35)
  * Typo: Cormorant Garamond (titres), Lato (corps), Dancing Script (accents)
  */
 import { useState, useEffect, useRef } from 'react';
 import GradientWaves from '@/components/GradientWaves';
 import { MapView } from '@/components/Map';
 
-// ── Icônes SVG inline ──────────────────────────────────────────────────────
-// Fine-line botanical peony illustration (Art Nouveau line art)
-const PeonyLineart = ({ className = '', color = '#C8647A', opacity = 0.12 }: { className?: string; color?: string; opacity?: number }) => (
-  <svg className={className} viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ opacity }}>
-    <path d="M100 240 C100 200 98 170 100 140" stroke={color} strokeWidth="1.5" strokeLinecap="round"/>
-    <path d="M100 190 C80 175 60 180 55 165 C70 160 90 168 100 190Z" stroke={color} strokeWidth="1" fill={color} fillOpacity="0.08"/>
-    <path d="M100 175 C120 160 140 165 145 150 C130 145 110 153 100 175Z" stroke={color} strokeWidth="1" fill={color} fillOpacity="0.08"/>
-    <path d="M100 140 C85 120 70 115 68 100 C80 95 95 108 100 140Z" stroke={color} strokeWidth="1" fill={color} fillOpacity="0.06"/>
-    <path d="M100 140 C115 120 130 115 132 100 C120 95 105 108 100 140Z" stroke={color} strokeWidth="1" fill={color} fillOpacity="0.06"/>
-    <path d="M100 140 C78 130 65 118 60 105 C72 98 88 112 100 140Z" stroke={color} strokeWidth="1" fill={color} fillOpacity="0.06"/>
-    <path d="M100 140 C122 130 135 118 140 105 C128 98 112 112 100 140Z" stroke={color} strokeWidth="1" fill={color} fillOpacity="0.06"/>
-    <path d="M100 140 C88 110 88 90 100 80 C112 90 112 110 100 140Z" stroke={color} strokeWidth="1" fill={color} fillOpacity="0.06"/>
-    <path d="M100 130 C88 115 84 103 88 95 C96 92 104 100 100 130Z" stroke={color} strokeWidth="1" fill={color} fillOpacity="0.1"/>
-    <path d="M100 130 C112 115 116 103 112 95 C104 92 96 100 100 130Z" stroke={color} strokeWidth="1" fill={color} fillOpacity="0.1"/>
-    <circle cx="100" cy="108" r="8" stroke={color} strokeWidth="1" fill={color} fillOpacity="0.15"/>
-    <circle cx="100" cy="108" r="3" fill="#C9A96E" fillOpacity="0.4"/>
-  </svg>
-);
-
-const BotanicalDivider = ({ color = '#C8647A' }: { color?: string }) => (
+// ── Séparateur de section (rayures façon store de brasserie) ───────────────
+const SectionDivider = ({ color = '#B8872A' }: { color?: string }) => (
   <div className="flex items-center justify-center gap-4 my-5">
     <div style={{ height: 1, width: 60, background: `linear-gradient(to right, transparent, ${color}50)` }} />
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-      <circle cx="10" cy="10" r="2" fill={color} fillOpacity="0.7"/>
-      <path d="M10 10 C6 6 2 7 1 4 C4 3 8 5 10 10Z" fill={color} fillOpacity="0.35"/>
-      <path d="M10 10 C14 6 18 7 19 4 C16 3 12 5 10 10Z" fill={color} fillOpacity="0.35"/>
-      <path d="M10 10 C6 14 2 13 1 16 C4 17 8 15 10 10Z" fill={color} fillOpacity="0.25"/>
-      <path d="M10 10 C14 14 18 13 19 16 C16 17 12 15 10 10Z" fill={color} fillOpacity="0.25"/>
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+      <rect x="1" y="1" width="16" height="16" rx="2" stroke={color} strokeWidth="1.4"/>
+      <rect x="6" y="6" width="6" height="6" fill={color} fillOpacity="0.5"/>
     </svg>
     <div style={{ height: 1, width: 60, background: `linear-gradient(to left, transparent, ${color}50)` }} />
   </div>
@@ -65,23 +44,34 @@ function Navbar() {
       style={{
         background: scrolled ? 'rgba(255,255,255,0.95)' : 'transparent',
         backdropFilter: scrolled ? 'blur(12px)' : 'none',
-        boxShadow: scrolled ? '0 1px 24px rgba(200,100,122,0.08)' : 'none',
+        boxShadow: scrolled ? '0 1px 24px rgba(90,70,30,0.08)' : 'none',
       }}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-3 group">
-          <img
-            src="/images/pivoine-logo_113fe9cf.png"
-            alt="Logo Café Pivoine"
-            className="w-10 h-10 object-contain"
-          />
+          <span
+            className="flex items-center justify-center flex-shrink-0"
+            style={{
+              width: 40,
+              height: 40,
+              borderRadius: '0.4rem',
+              border: `1.5px solid ${scrolled ? '#B8872A' : 'rgba(255,255,255,0.85)'}`,
+              fontFamily: "'Cormorant Garamond', serif",
+              fontSize: '1.1rem',
+              fontWeight: 600,
+              color: scrolled ? '#B8872A' : '#fff',
+              transition: 'color 0.4s, border-color 0.4s',
+            }}
+          >
+            CP
+          </span>
           <span
             style={{
               fontFamily: "'Cormorant Garamond', serif",
               fontSize: '1.5rem',
               fontWeight: 600,
-              color: scrolled ? '#C8647A' : '#fff',
+              color: scrolled ? '#B8872A' : '#fff',
               letterSpacing: '0.04em',
               textShadow: scrolled ? 'none' : '0 2px 12px rgba(0,0,0,0.4)',
               transition: 'color 0.4s',
@@ -103,12 +93,12 @@ function Navbar() {
                 fontWeight: 400,
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase',
-                color: scrolled ? '#3a2a2e' : '#fff',
+                color: scrolled ? '#241E1A' : '#fff',
                 textShadow: scrolled ? 'none' : '0 1px 8px rgba(0,0,0,0.5)',
                 transition: 'color 0.3s',
                 textDecoration: 'none',
               }}
-              className="hover:text-[#C8647A] transition-colors"
+              className="hover:text-[#B8872A] transition-colors"
             >
               {link.label}
             </a>
@@ -122,14 +112,14 @@ function Navbar() {
               letterSpacing: '0.12em',
               textTransform: 'uppercase',
               color: '#fff',
-              background: '#C8647A',
+              background: '#B8872A',
               padding: '0.55rem 1.4rem',
               borderRadius: '2rem',
               textDecoration: 'none',
               transition: 'background 0.3s, transform 0.15s',
             }}
-            onMouseEnter={e => (e.currentTarget.style.background = '#a84e62')}
-            onMouseLeave={e => (e.currentTarget.style.background = '#C8647A')}
+            onMouseEnter={e => (e.currentTarget.style.background = '#93691E')}
+            onMouseLeave={e => (e.currentTarget.style.background = '#B8872A')}
           >
             Réserver
           </a>
@@ -145,7 +135,7 @@ function Navbar() {
             <span
               key={i}
               className="block w-6 h-0.5 transition-all duration-300"
-              style={{ background: scrolled ? '#C8647A' : '#fff' }}
+              style={{ background: scrolled ? '#B8872A' : '#fff' }}
             />
           ))}
         </button>
@@ -153,7 +143,7 @@ function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-[#f0d8dc] px-6 py-4 flex flex-col gap-4">
+        <div className="md:hidden bg-white border-t border-[#E6D9BC] px-6 py-4 flex flex-col gap-4">
           {navLinks.map(link => (
             <a
               key={link.href}
@@ -164,7 +154,7 @@ function Navbar() {
                 fontSize: '0.9rem',
                 letterSpacing: '0.08em',
                 textTransform: 'uppercase',
-                color: '#3a2a2e',
+                color: '#241E1A',
                 textDecoration: 'none',
               }}
             >
@@ -183,8 +173,8 @@ function Hero() {
     <section className="relative w-full" style={{ height: '100vh', minHeight: 600 }}>
       {/* Photo façade */}
       <img
-        src="/images/restaurant-interior_4304db63.png"
-        alt="Intérieur du restaurant Café Pivoine"
+        src="/images/facade-terrasse.webp"
+        alt="Façade et terrasse du restaurant Café Pivoine"
         className="absolute inset-0 w-full h-full object-cover"
         style={{ objectPosition: 'center 30%' }}
       />
@@ -192,7 +182,7 @@ function Hero() {
       <div
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(to bottom, rgba(20,5,10,0.18) 0%, rgba(20,5,10,0.30) 55%, rgba(180,80,100,0.18) 100%)',
+          background: 'linear-gradient(to bottom, rgba(20,5,10,0.18) 0%, rgba(20,5,10,0.30) 55%, rgba(150,110,40,0.22) 100%)',
         }}
       />
       {/* Contenu hero */}
@@ -201,7 +191,7 @@ function Hero() {
           style={{
             fontFamily: "'Dancing Script', cursive",
             fontSize: 'clamp(1.1rem, 3vw, 1.6rem)',
-            color: '#F5C6CE',
+            color: '#F4E3B8',
             marginBottom: '0.75rem',
             letterSpacing: '0.06em',
           }}
@@ -245,14 +235,14 @@ function Hero() {
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase',
                 color: '#fff',
-                background: '#C8647A',
+                background: '#B8872A',
                 padding: '0.7rem 1.5rem',
                 borderRadius: '2rem',
                 textDecoration: 'none',
                 transition: 'background 0.3s, transform 0.15s',
               }}
-              onMouseEnter={e => { e.currentTarget.style.background = '#a84e62'; e.currentTarget.style.transform = 'scale(1.03)'; }}
-              onMouseLeave={e => { e.currentTarget.style.background = '#C8647A'; e.currentTarget.style.transform = 'scale(1)'; }}
+              onMouseEnter={e => { e.currentTarget.style.background = '#93691E'; e.currentTarget.style.transform = 'scale(1.03)'; }}
+              onMouseLeave={e => { e.currentTarget.style.background = '#B8872A'; e.currentTarget.style.transform = 'scale(1)'; }}
             >
               Happy Hour
             </a>
@@ -265,14 +255,14 @@ function Hero() {
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase',
                 color: '#fff',
-                background: '#C8647A',
+                background: '#B8872A',
                 padding: '0.7rem 1.5rem',
                 borderRadius: '2rem',
                 textDecoration: 'none',
                 transition: 'background 0.3s, transform 0.15s',
               }}
-              onMouseEnter={e => { e.currentTarget.style.background = '#a84e62'; e.currentTarget.style.transform = 'scale(1.03)'; }}
-              onMouseLeave={e => { e.currentTarget.style.background = '#C8647A'; e.currentTarget.style.transform = 'scale(1)'; }}
+              onMouseEnter={e => { e.currentTarget.style.background = '#93691E'; e.currentTarget.style.transform = 'scale(1.03)'; }}
+              onMouseLeave={e => { e.currentTarget.style.background = '#B8872A'; e.currentTarget.style.transform = 'scale(1)'; }}
             >
               Brunch
             </a>
@@ -285,14 +275,14 @@ function Hero() {
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase',
                 color: '#fff',
-                background: '#C8647A',
+                background: '#B8872A',
                 padding: '0.7rem 1.5rem',
                 borderRadius: '2rem',
                 textDecoration: 'none',
                 transition: 'background 0.3s, transform 0.15s',
               }}
-              onMouseEnter={e => { e.currentTarget.style.background = '#a84e62'; e.currentTarget.style.transform = 'scale(1.03)'; }}
-              onMouseLeave={e => { e.currentTarget.style.background = '#C8647A'; e.currentTarget.style.transform = 'scale(1)'; }}
+              onMouseEnter={e => { e.currentTarget.style.background = '#93691E'; e.currentTarget.style.transform = 'scale(1.03)'; }}
+              onMouseLeave={e => { e.currentTarget.style.background = '#B8872A'; e.currentTarget.style.transform = 'scale(1)'; }}
             >
               Menu Saisonnier
             </a>
@@ -344,28 +334,26 @@ function AboutSection() {
   return (
     <section className="py-24 px-6 bg-white relative overflow-hidden">
       {/* Pivoine décorative fond */}
-      <PeonyLineart className="absolute -top-10 -right-10 w-80 h-80 pointer-events-none" opacity={0.10} />
-      <PeonyLineart className="absolute bottom-0 left-0 w-56 h-56 pointer-events-none" color="#C9A96E" opacity={0.07} />
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
         <div>
-          <p style={{ fontFamily: "'Dancing Script', cursive", fontSize: '1.2rem', color: '#C8647A', marginBottom: '0.5rem' }}>
+          <p style={{ fontFamily: "'Dancing Script', cursive", fontSize: '1.2rem', color: '#B8872A', marginBottom: '0.5rem' }}>
             Notre histoire
           </p>
-          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 600, color: '#2a1a1e', lineHeight: 1.2, marginBottom: '1.5rem' }}>
+          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 600, color: '#241E1A', lineHeight: 1.2, marginBottom: '1.5rem' }}>
             Un écrin floral<br /><em>au cœur de la ville</em>
           </h2>
-          <BotanicalDivider />
-          <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '1rem', color: '#5a3a42', lineHeight: 1.85, marginBottom: '1.2rem' }}>
+          <SectionDivider />
+          <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '1rem', color: '#4A4038', lineHeight: 1.85, marginBottom: '1.2rem' }}>
             Café Pivoine est un lieu où l'élégance florale rencontre la gastronomie vivante. Dans un décor aux reflets dorés et aux lumières tamisées, chaque repas devient une parenthèse hors du temps.
           </p>
-          <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '1rem', color: '#5a3a42', lineHeight: 1.85 }}>
+          <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '1rem', color: '#4A4038', lineHeight: 1.85 }}>
             Notre cuisine évolue au rythme des saisons, sublimant les produits frais du marché avec une touche créative et généreuse. Du brunch dominical au dîner intime, nous cultivons l'art de recevoir.
           </p>
           <div className="flex gap-3 mt-8">
             {[{ n: 'Happy Hour', t: 'Chaque soir' }, { n: 'Brunch', t: 'Sam. & Dim.' }, { n: 'Menu Saison', t: 'Renouvelé' }].map(item => (
-              <div key={item.n} className="text-center px-4 py-3 rounded-xl" style={{ background: '#FDF0F2', border: '1px solid #F0D0D8' }}>
-                <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '0.95rem', fontWeight: 600, color: '#C8647A' }}>{item.n}</div>
-                <div style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.72rem', color: '#8a5a62', letterSpacing: '0.08em', textTransform: 'uppercase', marginTop: 2 }}>{item.t}</div>
+              <div key={item.n} className="text-center px-4 py-3 rounded-xl" style={{ background: '#F7F0DC', border: '1px solid #E6D9BC' }}>
+                <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '0.95rem', fontWeight: 600, color: '#B8872A' }}>{item.n}</div>
+                <div style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.72rem', color: '#8C8171', letterSpacing: '0.08em', textTransform: 'uppercase', marginTop: 2 }}>{item.t}</div>
               </div>
             ))}
           </div>
@@ -377,8 +365,8 @@ function AboutSection() {
             style={{ borderRadius: '60% 40% 55% 45% / 45% 55% 45% 55%', aspectRatio: '4/5' }}
           >
             <img
-              src="/images/restaurant-interior_4304db63.png"
-              alt="Ambiance Café Pivoine"
+              src="/images/facade-terrasse.webp"
+              alt="Façade du restaurant Café Pivoine"
               className="w-full h-full object-cover"
               style={{ objectPosition: 'center 40%' }}
             />
@@ -386,7 +374,7 @@ function AboutSection() {
           {/* Badge flottant */}
           <div
             className="absolute -bottom-4 -left-4 rounded-full flex flex-col items-center justify-center shadow-lg"
-            style={{ width: 90, height: 90, background: '#C8647A' }}
+            style={{ width: 90, height: 90, background: '#B8872A' }}
           >
             <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.5rem', fontWeight: 700, color: '#fff', lineHeight: 1 }}>2019</span>
             <span style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.6rem', color: 'rgba(255,255,255,0.8)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>Depuis</span>
@@ -408,19 +396,18 @@ function HappyHourSection() {
 
   return (
     <section id="happyhour" className="relative bg-white">
-      <div style={{ height: 5, background: 'linear-gradient(to right, transparent, #C8647A30, transparent)' }} />
+      <div style={{ height: 5, background: 'linear-gradient(to right, transparent, #B8872A30, transparent)' }} />
       <div className="py-20 px-6 relative overflow-hidden">
-        <PeonyLineart className="absolute top-0 right-0 w-80 h-80 pointer-events-none" opacity={0.06} />
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
-            <p style={{ fontFamily: "'Dancing Script', cursive", fontSize: '1.2rem', color: '#C8647A', marginBottom: '0.4rem' }}>
+            <p style={{ fontFamily: "'Dancing Script', cursive", fontSize: '1.2rem', color: '#B8872A', marginBottom: '0.4rem' }}>
               Chaque soir de 17h à 20h
             </p>
-            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 600, color: '#2a1a1e', marginBottom: '1rem' }}>
+            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 600, color: '#241E1A', marginBottom: '1rem' }}>
               Happy Hour
             </h2>
-            <BotanicalDivider />
-            <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '1rem', color: '#6a4a52', maxWidth: 480, margin: '0 auto', lineHeight: 1.7 }}>
+            <SectionDivider />
+            <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '1rem', color: '#6E6355', maxWidth: 480, margin: '0 auto', lineHeight: 1.7 }}>
               Retrouvez-nous en fin de journée pour des cocktails signature et des planches à partager, dans l'atmosphère chaleureuse de Café Pivoine.
             </p>
           </div>
@@ -430,24 +417,19 @@ function HappyHourSection() {
               <div
                 key={i}
                 className="rounded-2xl p-6 flex flex-col gap-3 transition-all duration-300 cursor-default"
-                style={{ background: '#fff', border: '1px solid #F0D0D8', boxShadow: '0 4px 20px rgba(200,100,122,0.06)' }}
-                onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-6px)'; (e.currentTarget as HTMLDivElement).style.boxShadow = '0 12px 32px rgba(200,100,122,0.14)'; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)'; (e.currentTarget as HTMLDivElement).style.boxShadow = '0 4px 20px rgba(200,100,122,0.06)'; }}
+                style={{ background: '#fff', border: '1px solid #E6D9BC', boxShadow: '0 4px 20px rgba(90,70,30,0.06)' }}
+                onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-6px)'; (e.currentTarget as HTMLDivElement).style.boxShadow = '0 12px 32px rgba(90,70,30,0.14)'; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)'; (e.currentTarget as HTMLDivElement).style.boxShadow = '0 4px 20px rgba(90,70,30,0.06)'; }}
               >
                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                  <circle cx="14" cy="14" r="4" fill="#C8647A" fillOpacity="0.7"/>
-                  {[0,60,120,180,240,300].map((a, idx) => (
-                    <ellipse key={idx} cx={14 + 7*Math.cos(a*Math.PI/180)} cy={14 + 7*Math.sin(a*Math.PI/180)} rx="3.5" ry="2.2"
-                      fill="#C8647A" fillOpacity="0.35"
-                      transform={`rotate(${a} ${14 + 7*Math.cos(a*Math.PI/180)} ${14 + 7*Math.sin(a*Math.PI/180)})`}/>
-                  ))}
-                  <circle cx="14" cy="14" r="1.5" fill="#C9A96E"/>
+                  <path d="M6 6h16l-7 9v6h4v2H9v-2h4v-6L6 6Z" stroke="#B8872A" strokeWidth="1.6" strokeLinejoin="round"/>
+                  <circle cx="20" cy="8" r="1.4" fill="#8C6A35"/>
                 </svg>
                 <div>
-                  <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.2rem', fontWeight: 600, color: '#2a1a1e', marginBottom: '0.3rem' }}>{c.name}</h3>
-                  <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.85rem', color: '#7a5a62', lineHeight: 1.6 }}>{c.desc}</p>
+                  <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.2rem', fontWeight: 600, color: '#241E1A', marginBottom: '0.3rem' }}>{c.name}</h3>
+                  <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.85rem', color: '#6E6355', lineHeight: 1.6 }}>{c.desc}</p>
                 </div>
-                <div style={{ marginTop: 'auto', fontFamily: "'Cormorant Garamond', serif", fontSize: '1.4rem', fontWeight: 700, color: '#C8647A' }}>{c.price}</div>
+                <div style={{ marginTop: 'auto', fontFamily: "'Cormorant Garamond', serif", fontSize: '1.4rem', fontWeight: 700, color: '#B8872A' }}>{c.price}</div>
               </div>
             ))}
           </div>
@@ -455,8 +437,8 @@ function HappyHourSection() {
           {/* GradientWaves décoratif */}
           <div className="mt-16 rounded-3xl overflow-hidden" style={{ height: 160 }}>
             <GradientWaves
-              horizonColor="#F9E8EC"
-              waveColor="#E8A0B0"
+              horizonColor="#F7F0DC"
+              waveColor="#D9B36B"
               crestColor="#FFFFFF"
               speed={0.25}
               amplitude={1.8}
@@ -469,7 +451,7 @@ function HappyHourSection() {
           </div>
         </div>
       </div>
-      <div style={{ height: 5, background: 'linear-gradient(to right, transparent, #C8647A30, transparent)' }} />
+      <div style={{ height: 5, background: 'linear-gradient(to right, transparent, #B8872A30, transparent)' }} />
     </section>
   );
 }
@@ -478,20 +460,18 @@ function HappyHourSection() {
 function BrunchSection() {
   return (
     <section id="brunch" className="py-24 px-6 bg-white relative overflow-hidden">
-      <PeonyLineart className="absolute top-0 left-0 w-72 h-72 pointer-events-none -translate-x-1/4 -translate-y-1/4" color="#C9A96E" opacity={0.08} />
-      <PeonyLineart className="absolute bottom-0 right-0 w-64 h-64 pointer-events-none translate-x-1/4 translate-y-1/4" opacity={0.07} />
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Texte */}
           <div>
-            <p style={{ fontFamily: "'Dancing Script', cursive", fontSize: '1.2rem', color: '#C8647A', marginBottom: '0.4rem' }}>
+            <p style={{ fontFamily: "'Dancing Script', cursive", fontSize: '1.2rem', color: '#B8872A', marginBottom: '0.4rem' }}>
               Samedi & Dimanche · 10h–15h
             </p>
-            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 600, color: '#2a1a1e', lineHeight: 1.2, marginBottom: '1.5rem' }}>
+            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 600, color: '#241E1A', lineHeight: 1.2, marginBottom: '1.5rem' }}>
               Le Brunch<br /><em>de Café Pivoine</em>
             </h2>
-            <BotanicalDivider />
-            <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '1rem', color: '#5a3a42', lineHeight: 1.85, marginBottom: '1.5rem' }}>
+            <SectionDivider />
+            <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '1rem', color: '#4A4038', lineHeight: 1.85, marginBottom: '1.5rem' }}>
               Un brunch généreux et raffiné, pensé pour les matins qui s'étirent. Œufs bénédicte, tartines créatives, viennoiseries maison et jus pressés à la minute — tout ce qu'il faut pour bien commencer le week-end.
             </p>
             <div className="space-y-3 mb-8">
@@ -503,17 +483,17 @@ function BrunchSection() {
                 'Jus de fruits frais & smoothies du moment',
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-3">
-                  <span style={{ color: '#C8647A', marginTop: 3, flexShrink: 0 }}>
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" fill="#C8647A"/></svg>
+                  <span style={{ color: '#B8872A', marginTop: 3, flexShrink: 0 }}>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="3" fill="#B8872A"/></svg>
                   </span>
-                  <span style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.95rem', color: '#5a3a42', lineHeight: 1.6 }}>{item}</span>
+                  <span style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.95rem', color: '#4A4038', lineHeight: 1.6 }}>{item}</span>
                 </div>
               ))}
             </div>
             <div className="flex items-center gap-6">
               <div>
-                <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '2rem', fontWeight: 700, color: '#C8647A' }}>29€</div>
-                <div style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.75rem', color: '#8a5a62', letterSpacing: '0.08em', textTransform: 'uppercase' }}>par personne</div>
+                <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '2rem', fontWeight: 700, color: '#B8872A' }}>29€</div>
+                <div style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.75rem', color: '#8C8171', letterSpacing: '0.08em', textTransform: 'uppercase' }}>par personne</div>
               </div>
               <a
                 href="#reservation"
@@ -524,14 +504,14 @@ function BrunchSection() {
                   letterSpacing: '0.1em',
                   textTransform: 'uppercase',
                   color: '#fff',
-                  background: '#C8647A',
+                  background: '#B8872A',
                   padding: '0.75rem 1.8rem',
                   borderRadius: '2rem',
                   textDecoration: 'none',
                   transition: 'background 0.3s',
                 }}
-                onMouseEnter={e => (e.currentTarget.style.background = '#a84e62')}
-                onMouseLeave={e => (e.currentTarget.style.background = '#C8647A')}
+                onMouseEnter={e => (e.currentTarget.style.background = '#93691E')}
+                onMouseLeave={e => (e.currentTarget.style.background = '#B8872A')}
               >
                 Réserver le brunch
               </a>
@@ -545,15 +525,15 @@ function BrunchSection() {
               style={{ borderRadius: '45% 55% 40% 60% / 55% 45% 60% 40%', aspectRatio: '4/5' }}
             >
               <img
-                src="/images/brunch-dish_c6b33f50.png"
-                alt="Brunch Café Pivoine — Tartine avocat saumon"
+                src="/images/brunch-table.webp"
+                alt="Table de brunch Café Pivoine — croissant, tartine et jus pressé"
                 className="w-full h-full object-cover"
               />
             </div>
             {/* Étiquette flottante */}
             <div
               className="absolute top-6 -right-4 rounded-2xl px-4 py-3 shadow-lg"
-              style={{ background: '#C9A96E' }}
+              style={{ background: '#8C6A35' }}
             >
               <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1rem', fontWeight: 600, color: '#fff' }}>Fait maison</div>
               <div style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.7rem', color: 'rgba(255,255,255,0.85)', letterSpacing: '0.08em' }}>chaque matin</div>
@@ -571,13 +551,13 @@ function SeasonalMenuSection() {
 
   const seasons: Record<string, { label: string; icon: string; color: string; starters: string[]; mains: string[]; desserts: string[] }> = {
     printemps: {
-      label: 'Printemps', icon: '🌸', color: '#C8647A',
+      label: 'Printemps', icon: '🌸', color: '#B8872A',
       starters: ['Velouté d\'asperges vertes, huile de truffe', 'Tartare de daurade, fleurs comestibles', 'Burrata, petits pois, menthe fraîche'],
       mains: ['Agneau de lait, jus d\'herbes, légumes primeurs', 'Risotto aux morilles, parmesan 24 mois', 'Saint-Jacques poêlées, purée de topinambour'],
       desserts: ['Pavlova aux fraises Gariguette', 'Tarte fine rhubarbe, crème légère', 'Panna cotta fleur de sureau'],
     },
     ete: {
-      label: 'Été', icon: '☀️', color: '#C9A96E',
+      label: 'Été', icon: '☀️', color: '#8C6A35',
       starters: ['Gratin de quinoa et petis légumes', 'Ravioles aux champignons et à la crème de truffe, parmesan', 'Salade de melon, jambon de Bayonne, roquette'],
       mains: ['Filet de bar, ratatouille confite, pistou', 'Poulet fermier rôti, légumes du soleil', 'Penne aux courgettes, ricotta, citron'],
       desserts: ['Fromage blanc, fruits de saisons & crumble noisettes', 'Crème brûlée à la vanille', 'Clafoutis aux cerises noires'],
@@ -600,20 +580,18 @@ function SeasonalMenuSection() {
 
   return (
     <section id="menu" className="relative bg-white">
-      <div style={{ height: 5, background: 'linear-gradient(to right, transparent, #C8647A30, transparent)' }} />
+      <div style={{ height: 5, background: 'linear-gradient(to right, transparent, #B8872A30, transparent)' }} />
       <div className="py-20 px-6 relative overflow-hidden">
-        <PeonyLineart className="absolute -bottom-10 -left-10 w-80 h-80 pointer-events-none" color="#C9A96E" opacity={0.07} />
-        <PeonyLineart className="absolute top-10 right-0 w-64 h-64 pointer-events-none" opacity={0.06} />
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <p style={{ fontFamily: "'Dancing Script', cursive", fontSize: '1.2rem', color: '#C8647A', marginBottom: '0.4rem' }}>
+            <p style={{ fontFamily: "'Dancing Script', cursive", fontSize: '1.2rem', color: '#B8872A', marginBottom: '0.4rem' }}>
               Renouvelé chaque saison
             </p>
-            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 600, color: '#2a1a1e', marginBottom: '1rem' }}>
+            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 600, color: '#241E1A', marginBottom: '1rem' }}>
               Menu Saisonnier
             </h2>
-            <BotanicalDivider />
-            <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '1rem', color: '#6a4a52', maxWidth: 500, margin: '0 auto', lineHeight: 1.7 }}>
+            <SectionDivider />
+            <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '1rem', color: '#6E6355', maxWidth: 500, margin: '0 auto', lineHeight: 1.7 }}>
               Notre cuisine suit le rythme de la nature. Chaque saison apporte ses saveurs, ses textures et ses émotions.
             </p>
           </div>
@@ -630,9 +608,9 @@ function SeasonalMenuSection() {
                   fontWeight: activeSeason === key ? 700 : 400,
                   letterSpacing: '0.08em',
                   textTransform: 'uppercase',
-                  color: activeSeason === key ? '#fff' : '#5a3a42',
+                  color: activeSeason === key ? '#fff' : '#4A4038',
                   background: activeSeason === key ? s.color : '#fff',
-                  border: `1.5px solid ${activeSeason === key ? s.color : '#E0C0C8'}`,
+                  border: `1.5px solid ${activeSeason === key ? s.color : '#E6D9BC'}`,
                   padding: '0.6rem 1.5rem',
                   borderRadius: '2rem',
                   cursor: 'pointer',
@@ -657,16 +635,16 @@ function SeasonalMenuSection() {
               <div
                 key={i}
                 className="rounded-2xl p-7"
-                style={{ background: '#fff', border: '1px solid #F0D0D8', boxShadow: '0 4px 20px rgba(200,100,122,0.06)' }}
+                style={{ background: '#fff', border: '1px solid #E6D9BC', boxShadow: '0 4px 20px rgba(90,70,30,0.06)' }}
               >
                 <div className="flex items-center gap-2 mb-5">
                   <span style={{ fontSize: '1.4rem' }}>{cat.icon}</span>
-                  <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.4rem', fontWeight: 600, color: '#2a1a1e' }}>{cat.title}</h3>
+                  <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.4rem', fontWeight: 600, color: '#241E1A' }}>{cat.title}</h3>
                 </div>
                 <div className="space-y-4">
                   {cat.items.map((item, j) => (
-                    <div key={j} className="pb-3" style={{ borderBottom: j < cat.items.length - 1 ? '1px solid #F5E0E4' : 'none' }}>
-                      <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.9rem', color: '#3a2a2e', lineHeight: 1.5 }}>{item}</p>
+                    <div key={j} className="pb-3" style={{ borderBottom: j < cat.items.length - 1 ? '1px solid #E6D9BC' : 'none' }}>
+                      <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.9rem', color: '#241E1A', lineHeight: 1.5 }}>{item}</p>
                     </div>
                   ))}
                 </div>
@@ -676,18 +654,18 @@ function SeasonalMenuSection() {
 
           {/* Prix menu */}
           <div className="mt-10 text-center">
-            <div className="inline-flex gap-8 rounded-2xl px-10 py-6" style={{ background: '#fff', border: '1px solid #F0D0D8', boxShadow: '0 4px 20px rgba(200,100,122,0.06)' }}>
+            <div className="inline-flex gap-8 rounded-2xl px-10 py-6" style={{ background: '#fff', border: '1px solid #E6D9BC', boxShadow: '0 4px 20px rgba(90,70,30,0.06)' }}>
               {[{ label: 'Entrée + Plat', price: '32€' }, { label: 'Plat + Dessert', price: '32€' }, { label: 'Menu complet', price: '42€' }].map((m, i) => (
                 <div key={i} className="text-center">
-                  <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.6rem', fontWeight: 700, color: '#C8647A' }}>{m.price}</div>
-                  <div style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.75rem', color: '#8a5a62', letterSpacing: '0.06em', textTransform: 'uppercase' }}>{m.label}</div>
+                  <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.6rem', fontWeight: 700, color: '#B8872A' }}>{m.price}</div>
+                  <div style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.75rem', color: '#8C8171', letterSpacing: '0.06em', textTransform: 'uppercase' }}>{m.label}</div>
                 </div>
               ))}
             </div>
           </div>
         </div>
       </div>
-      <div style={{ height: 5, background: 'linear-gradient(to right, transparent, #C8647A30, transparent)' }} />
+      <div style={{ height: 5, background: 'linear-gradient(to right, transparent, #B8872A30, transparent)' }} />
     </section>
   );
 }
@@ -705,9 +683,9 @@ function ReservationSection() {
   const inputStyle: React.CSSProperties = {
     fontFamily: "'Lato', sans-serif",
     fontSize: '0.9rem',
-    color: '#3a2a2e',
+    color: '#241E1A',
     background: '#fff',
-    border: '1.5px solid #E0C0C8',
+    border: '1.5px solid #E6D9BC',
     borderRadius: '0.75rem',
     padding: '0.75rem 1rem',
     width: '100%',
@@ -721,25 +699,23 @@ function ReservationSection() {
     fontWeight: 700,
     letterSpacing: '0.1em',
     textTransform: 'uppercase',
-    color: '#8a5a62',
+    color: '#8C8171',
     marginBottom: '0.4rem',
     display: 'block',
   };
 
   return (
     <section id="reservation" className="py-24 px-6 bg-white relative overflow-hidden">
-      <PeonyLineart className="absolute -bottom-20 -left-20 w-96 h-96 pointer-events-none" opacity={0.08} />
-      <PeonyLineart className="absolute -top-10 right-10 w-72 h-72 pointer-events-none" color="#C9A96E" opacity={0.06} />
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-14">
-          <p style={{ fontFamily: "'Dancing Script', cursive", fontSize: '1.2rem', color: '#C8647A', marginBottom: '0.4rem' }}>
+          <p style={{ fontFamily: "'Dancing Script', cursive", fontSize: '1.2rem', color: '#B8872A', marginBottom: '0.4rem' }}>
             Nous vous attendons
           </p>
-          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 600, color: '#2a1a1e', marginBottom: '1rem' }}>
+          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 600, color: '#241E1A', marginBottom: '1rem' }}>
             Réserver une table
           </h2>
-          <BotanicalDivider />
-          <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '1rem', color: '#6a4a52', maxWidth: 420, margin: '0 auto', lineHeight: 1.7 }}>
+          <SectionDivider />
+          <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '1rem', color: '#6E6355', maxWidth: 420, margin: '0 auto', lineHeight: 1.7 }}>
             Pour toute demande spéciale ou événement privé, n'hésitez pas à nous contacter directement.
           </p>
         </div>
@@ -747,10 +723,10 @@ function ReservationSection() {
         {sent ? (
           <div className="text-center py-16">
             <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🌸</div>
-            <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.8rem', fontWeight: 600, color: '#C8647A', marginBottom: '0.75rem' }}>
+            <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.8rem', fontWeight: 600, color: '#B8872A', marginBottom: '0.75rem' }}>
               Merci pour votre réservation !
             </h3>
-            <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '1rem', color: '#6a4a52' }}>
+            <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '1rem', color: '#6E6355' }}>
               Nous vous confirmerons votre table par e-mail dans les plus brefs délais.
             </p>
           </div>
@@ -765,8 +741,8 @@ function ReservationSection() {
                 value={form.name}
                 onChange={e => setForm({ ...form, name: e.target.value })}
                 style={inputStyle}
-                onFocus={e => (e.target.style.borderColor = '#C8647A')}
-                onBlur={e => (e.target.style.borderColor = '#E0C0C8')}
+                onFocus={e => (e.target.style.borderColor = '#B8872A')}
+                onBlur={e => (e.target.style.borderColor = '#E6D9BC')}
               />
             </div>
             <div>
@@ -778,8 +754,8 @@ function ReservationSection() {
                 value={form.email}
                 onChange={e => setForm({ ...form, email: e.target.value })}
                 style={inputStyle}
-                onFocus={e => (e.target.style.borderColor = '#C8647A')}
-                onBlur={e => (e.target.style.borderColor = '#E0C0C8')}
+                onFocus={e => (e.target.style.borderColor = '#B8872A')}
+                onBlur={e => (e.target.style.borderColor = '#E6D9BC')}
               />
             </div>
             <div>
@@ -790,8 +766,8 @@ function ReservationSection() {
                 value={form.date}
                 onChange={e => setForm({ ...form, date: e.target.value })}
                 style={inputStyle}
-                onFocus={e => (e.target.style.borderColor = '#C8647A')}
-                onBlur={e => (e.target.style.borderColor = '#E0C0C8')}
+                onFocus={e => (e.target.style.borderColor = '#B8872A')}
+                onBlur={e => (e.target.style.borderColor = '#E6D9BC')}
               />
             </div>
             <div>
@@ -801,8 +777,8 @@ function ReservationSection() {
                 value={form.time}
                 onChange={e => setForm({ ...form, time: e.target.value })}
                 style={inputStyle}
-                onFocus={e => (e.target.style.borderColor = '#C8647A')}
-                onBlur={e => (e.target.style.borderColor = '#E0C0C8')}
+                onFocus={e => (e.target.style.borderColor = '#B8872A')}
+                onBlur={e => (e.target.style.borderColor = '#E6D9BC')}
               >
                 <option value="">Choisir un horaire</option>
                 {['12:00', '12:30', '13:00', '13:30', '19:00', '19:30', '20:00', '20:30', '21:00', '21:30'].map(t => (
@@ -816,8 +792,8 @@ function ReservationSection() {
                 value={form.guests}
                 onChange={e => setForm({ ...form, guests: e.target.value })}
                 style={inputStyle}
-                onFocus={e => (e.target.style.borderColor = '#C8647A')}
-                onBlur={e => (e.target.style.borderColor = '#E0C0C8')}
+                onFocus={e => (e.target.style.borderColor = '#B8872A')}
+                onBlur={e => (e.target.style.borderColor = '#E6D9BC')}
               >
                 {[1, 2, 3, 4, 5, 6, 7, 8].map(n => (
                   <option key={n} value={n}>{n} {n === 1 ? 'personne' : 'personnes'}</option>
@@ -832,8 +808,8 @@ function ReservationSection() {
                 onChange={e => setForm({ ...form, message: e.target.value })}
                 rows={1}
                 style={{ ...inputStyle, resize: 'none' }}
-                onFocus={e => (e.target.style.borderColor = '#C8647A')}
-                onBlur={e => (e.target.style.borderColor = '#E0C0C8')}
+                onFocus={e => (e.target.style.borderColor = '#B8872A')}
+                onBlur={e => (e.target.style.borderColor = '#E6D9BC')}
               />
             </div>
             <div className="md:col-span-2 flex justify-center mt-2">
@@ -846,15 +822,15 @@ function ReservationSection() {
                   letterSpacing: '0.12em',
                   textTransform: 'uppercase',
                   color: '#fff',
-                  background: '#C8647A',
+                  background: '#B8872A',
                   padding: '0.9rem 3rem',
                   borderRadius: '2rem',
                   border: 'none',
                   cursor: 'pointer',
                   transition: 'background 0.3s, transform 0.15s',
                 }}
-                onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.background = '#a84e62'; (e.currentTarget as HTMLButtonElement).style.transform = 'scale(1.03)'; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.background = '#C8647A'; (e.currentTarget as HTMLButtonElement).style.transform = 'scale(1)'; }}
+                onMouseEnter={e => { (e.currentTarget as HTMLButtonElement).style.background = '#93691E'; (e.currentTarget as HTMLButtonElement).style.transform = 'scale(1.03)'; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLButtonElement).style.background = '#B8872A'; (e.currentTarget as HTMLButtonElement).style.transform = 'scale(1)'; }}
               >
                 Confirmer la réservation
               </button>
@@ -882,49 +858,48 @@ function ContactSection() {
 
   return (
     <section className="py-24 px-6 bg-white relative overflow-hidden">
-      <PeonyLineart className="absolute top-0 right-0 w-80 h-80 pointer-events-none" opacity={0.06} />
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <p style={{ fontFamily: "'Dancing Script', cursive", fontSize: '1.2rem', color: '#C8647A', marginBottom: '0.4rem' }}>
+          <p style={{ fontFamily: "'Dancing Script', cursive", fontSize: '1.2rem', color: '#B8872A', marginBottom: '0.4rem' }}>
             Nous trouver
           </p>
-          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 600, color: '#2a1a1e', marginBottom: '1rem' }}>
+          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 600, color: '#241E1A', marginBottom: '1rem' }}>
             Localisation & Contact
           </h2>
-          <BotanicalDivider />
+          <SectionDivider />
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-stretch">
           <div className="flex flex-col gap-8">
-            <div className="rounded-2xl p-8" style={{ background: '#fff', border: '1px solid #EDD5DB', boxShadow: '0 2px 16px rgba(200,100,122,0.05)' }}>
+            <div className="rounded-2xl p-8" style={{ background: '#fff', border: '1px solid #E6D9BC', boxShadow: '0 2px 16px rgba(90,70,30,0.05)' }}>
               <div className="flex items-start gap-4 mb-4">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 8 13 8 13s8-7.75 8-13c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z" fill="#C8647A"/></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2C7.58 2 4 5.58 4 10c0 5.25 8 13 8 13s8-7.75 8-13c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z" fill="#B8872A"/></svg>
                 <div>
-                  <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1rem', fontWeight: 600, color: '#2a1a1e', marginBottom: '0.3rem' }}>Adresse</h3>
-                  <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.95rem', color: '#5a3a42', lineHeight: 1.6 }}>12 rue des Fleurs<br />75006 Paris, France</p>
+                  <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1rem', fontWeight: 600, color: '#241E1A', marginBottom: '0.3rem' }}>Adresse</h3>
+                  <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.95rem', color: '#4A4038', lineHeight: 1.6 }}>12 rue des Fleurs<br />75006 Paris, France</p>
                 </div>
               </div>
             </div>
-            <div className="rounded-2xl p-8" style={{ background: '#fff', border: '1px solid #EDD5DB', boxShadow: '0 2px 16px rgba(200,100,122,0.05)' }}>
+            <div className="rounded-2xl p-8" style={{ background: '#fff', border: '1px solid #E6D9BC', boxShadow: '0 2px 16px rgba(90,70,30,0.05)' }}>
               <div className="flex items-start gap-4 mb-4">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M17.92 7.02C17.45 6.18 16.84 5.46 16.07 4.91C15.29 4.36 14.41 4 13.5 4C11.57 4 10 5.57 10 7.5C10 8.5 10.35 9.41 10.93 10.12C10.31 10.59 9.77 11.13 9.31 11.74C8.35 13.02 7.8 14.56 7.8 16.2C7.8 19.63 10.57 22.4 14 22.4C17.43 22.4 20.2 19.63 20.2 16.2C20.2 14.56 19.65 13.02 18.69 11.74C18.23 11.13 17.69 10.59 17.07 10.12C17.65 9.41 18 8.5 18 7.5C18 6.5 17.65 5.59 17.07 4.88L17.92 7.02Z" fill="#C8647A"/></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M17.92 7.02C17.45 6.18 16.84 5.46 16.07 4.91C15.29 4.36 14.41 4 13.5 4C11.57 4 10 5.57 10 7.5C10 8.5 10.35 9.41 10.93 10.12C10.31 10.59 9.77 11.13 9.31 11.74C8.35 13.02 7.8 14.56 7.8 16.2C7.8 19.63 10.57 22.4 14 22.4C17.43 22.4 20.2 19.63 20.2 16.2C20.2 14.56 19.65 13.02 18.69 11.74C18.23 11.13 17.69 10.59 17.07 10.12C17.65 9.41 18 8.5 18 7.5C18 6.5 17.65 5.59 17.07 4.88L17.92 7.02Z" fill="#B8872A"/></svg>
                 <div>
-                  <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1rem', fontWeight: 600, color: '#2a1a1e', marginBottom: '0.3rem' }}>Téléphone</h3>
-                  <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.95rem', color: '#5a3a42', lineHeight: 1.6 }}><a href="tel:+33142000000" style={{ color: '#C8647A', textDecoration: 'none' }}>+33 1 42 00 00 00</a></p>
+                  <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1rem', fontWeight: 600, color: '#241E1A', marginBottom: '0.3rem' }}>Téléphone</h3>
+                  <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.95rem', color: '#4A4038', lineHeight: 1.6 }}><a href="tel:+33142000000" style={{ color: '#B8872A', textDecoration: 'none' }}>+33 1 42 00 00 00</a></p>
                 </div>
               </div>
             </div>
-            <div className="rounded-2xl p-8" style={{ background: '#fff', border: '1px solid #EDD5DB', boxShadow: '0 2px 16px rgba(200,100,122,0.05)' }}>
+            <div className="rounded-2xl p-8" style={{ background: '#fff', border: '1px solid #E6D9BC', boxShadow: '0 2px 16px rgba(90,70,30,0.05)' }}>
               <div className="flex items-start gap-4 mb-4">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 6L12 11L4 6H20ZM20 18H4V8L12 13L20 8V18Z" fill="#C8647A"/></svg>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 6L12 11L4 6H20ZM20 18H4V8L12 13L20 8V18Z" fill="#B8872A"/></svg>
                 <div>
-                  <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1rem', fontWeight: 600, color: '#2a1a1e', marginBottom: '0.3rem' }}>Email</h3>
-                  <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.95rem', color: '#5a3a42', lineHeight: 1.6 }}><a href="mailto:contact@lapivoine.fr" style={{ color: '#C8647A', textDecoration: 'none' }}>contact@lapivoine.fr</a></p>
+                  <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1rem', fontWeight: 600, color: '#241E1A', marginBottom: '0.3rem' }}>Email</h3>
+                  <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.95rem', color: '#4A4038', lineHeight: 1.6 }}><a href="mailto:contact@lapivoine.fr" style={{ color: '#B8872A', textDecoration: 'none' }}>contact@lapivoine.fr</a></p>
                 </div>
               </div>
             </div>
           </div>
-          <div className="rounded-2xl overflow-hidden shadow-lg" style={{ border: '1px solid #EDD5DB', minHeight: 400 }}>
+          <div className="rounded-2xl overflow-hidden shadow-lg" style={{ border: '1px solid #E6D9BC', minHeight: 400 }}>
             <MapView initialCenter={{ lat: 48.8566, lng: 2.3522 }} initialZoom={15} onMapReady={handleMapReady} className="rounded-2xl" />
           </div>
         </div>
@@ -936,7 +911,7 @@ function ContactSection() {
 // ── Footer ─────────────────────────────────────────────────────────────────
 function Footer() {
   return (
-    <footer style={{ background: '#2a1a1e' }} className="relative overflow-hidden">
+    <footer style={{ background: '#241E1A' }} className="relative overflow-hidden">
       {/* Vague de transition */}
       <div style={{ lineHeight: 0 }}>
         <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style={{ display: 'block', width: '100%', height: 60 }}>
@@ -948,8 +923,13 @@ function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img src="/images/pivoine-logo_113fe9cf.png" alt="Logo" className="w-8 h-8 object-contain opacity-90" />
-              <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.4rem', fontWeight: 600, color: '#F5C6CE' }}>Café Pivoine</span>
+              <span
+                className="flex items-center justify-center flex-shrink-0"
+                style={{ width: 32, height: 32, borderRadius: '0.35rem', border: '1.5px solid #F4E3B8', fontFamily: "'Cormorant Garamond', serif", fontSize: '0.9rem', fontWeight: 600, color: '#F4E3B8' }}
+              >
+                CP
+              </span>
+              <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.4rem', fontWeight: 600, color: '#F4E3B8' }}>Café Pivoine</span>
             </div>
             <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.88rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.7 }}>
               Un restaurant où chaque repas est une célébration des saisons et du goût.
@@ -957,7 +937,7 @@ function Footer() {
           </div>
           {/* Horaires */}
           <div>
-            <h4 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1rem', fontWeight: 600, color: '#F5C6CE', marginBottom: '1rem' }}>Horaires</h4>
+            <h4 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1rem', fontWeight: 600, color: '#F4E3B8', marginBottom: '1rem' }}>Horaires</h4>
             <div className="space-y-2">
               {[
                 { j: 'Lun – Ven', h: '12h–14h30 · 19h–23h' },
@@ -973,7 +953,7 @@ function Footer() {
           </div>
           {/* Contact */}
           <div>
-            <h4 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1rem', fontWeight: 600, color: '#F5C6CE', marginBottom: '1rem' }}>Contact</h4>
+            <h4 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1rem', fontWeight: 600, color: '#F4E3B8', marginBottom: '1rem' }}>Contact</h4>
             <div className="space-y-2">
               {[
                 { icon: '📍', text: '12 rue des Fleurs, 75006 Paris' },
@@ -992,7 +972,7 @@ function Footer() {
           <p style={{ fontFamily: "'Lato', sans-serif", fontSize: '0.78rem', color: 'rgba(255,255,255,0.35)' }}>
             © 2026 Restaurant Café Pivoine — Tous droits réservés
           </p>
-          <p style={{ fontFamily: "'Dancing Script', cursive", fontSize: '1rem', color: '#C8647A' }}>
+          <p style={{ fontFamily: "'Dancing Script', cursive", fontSize: '1rem', color: '#B8872A' }}>
             Là où les saisons ont un goût ✦
           </p>
         </div>

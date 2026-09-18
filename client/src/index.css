@@ -43,59 +43,59 @@
 }
 
 :root {
-  /* === PALETTE PIVOINE — Jardin Botanique Contemporain === */
-  /* Rose Pivoine #C8647A → oklch(0.62 0.12 10) */
-  /* Or doux #C9A96E → oklch(0.72 0.08 75) */
-  /* Vert sauge → oklch(0.65 0.06 145) */
-  /* Fond blanc pur, textes charbon */
+  /* === PALETTE FACADE — Brasserie Parisienne === */
+  /* Moutarde/Ocre (store de façade) #B8872A */
+  /* Brass antique #8C6A35 */
+  /* Charbon chaud (fer forgé) #241E1A */
+  /* Fond blanc, crème sable en accents */
 
   --radius: 0.75rem;
 
-  /* Primary = Rose Pivoine */
-  --primary: oklch(0.62 0.12 10);
-  --primary-foreground: oklch(1 0 0);
+  /* Primary = Ocre moutarde (store) */
+  --primary: #B8872A;
+  --primary-foreground: #FFFFFF;
 
-  /* Secondary = Rose pâle */
-  --secondary: oklch(0.96 0.02 10);
-  --secondary-foreground: oklch(0.35 0.05 10);
+  /* Secondary = Crème sable */
+  --secondary: #F7F0DC;
+  --secondary-foreground: #4A4038;
 
-  /* Accent = Or doux */
-  --accent: oklch(0.72 0.08 75);
-  --accent-foreground: oklch(1 0 0);
+  /* Accent = Brass antique */
+  --accent: #8C6A35;
+  --accent-foreground: #FFFFFF;
 
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.22 0.01 60);
+  --background: #FFFFFF;
+  --foreground: #241E1A;
 
-  --card: oklch(0.995 0.003 10);
-  --card-foreground: oklch(0.22 0.01 60);
+  --card: #FFFFFF;
+  --card-foreground: #241E1A;
 
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.22 0.01 60);
+  --popover: #FFFFFF;
+  --popover-foreground: #241E1A;
 
-  --muted: oklch(0.97 0.008 10);
-  --muted-foreground: oklch(0.55 0.03 10);
+  --muted: #F7F0DC;
+  --muted-foreground: #6E6355;
 
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.985 0 0);
 
-  --border: oklch(0.91 0.015 10);
-  --input: oklch(0.91 0.015 10);
-  --ring: oklch(0.62 0.12 10);
+  --border: #E6D9BC;
+  --input: #E6D9BC;
+  --ring: #B8872A;
 
-  --chart-1: oklch(0.62 0.12 10);
-  --chart-2: oklch(0.72 0.08 75);
-  --chart-3: oklch(0.65 0.06 145);
-  --chart-4: oklch(0.78 0.04 10);
-  --chart-5: oklch(0.50 0.10 10);
+  --chart-1: #B8872A;
+  --chart-2: #8C6A35;
+  --chart-3: #B8734A;
+  --chart-4: #6A8FAF;
+  --chart-5: #D9B36B;
 
-  --sidebar: oklch(0.995 0.003 10);
-  --sidebar-foreground: oklch(0.22 0.01 60);
-  --sidebar-primary: oklch(0.62 0.12 10);
-  --sidebar-primary-foreground: oklch(1 0 0);
-  --sidebar-accent: oklch(0.96 0.02 10);
-  --sidebar-accent-foreground: oklch(0.22 0.01 60);
-  --sidebar-border: oklch(0.91 0.015 10);
-  --sidebar-ring: oklch(0.62 0.12 10);
+  --sidebar: #FFFFFF;
+  --sidebar-foreground: #241E1A;
+  --sidebar-primary: #B8872A;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F7F0DC;
+  --sidebar-accent-foreground: #241E1A;
+  --sidebar-border: #E6D9BC;
+  --sidebar-ring: #B8872A;
 }
 
 .dark {
